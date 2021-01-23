@@ -35,36 +35,10 @@ public class JpaMain {
         /**
          * Select
          */
-//        try {
-//            Member findMember = entityManager.find(Member.class, 1L);
-//            System.out.println("Member ID: " + findMember.getId());
-//            System.out.println("Member Name: " + findMember.getName());
-//
-//            entityTransaction.commit();
-//        } catch (Exception e) {
-//            entityTransaction.rollback();
-//        } finally {
-//            entityManager.close();
-//            entityManagerFactory.close();
-//        }
-
-        /**
-         * Select All
-         */
         try {
-
-//            List<Member> memberList = entityManager.createQuery("select m from Member as m", Member.class).getResultList();
-            List<Member> memberList = entityManager
-                    .createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(0)
-                    .setMaxResults(10)
-                    .getResultList();
-            System.out.println("memberList Size: " + memberList.size());
-
-            memberList.forEach(member -> {
-                System.out.println("Member ID: " + member.getId());
-                System.out.println("Member Name: " + member.getName());
-            });
+            Member findMember = entityManager.find(Member.class, 1L);
+            System.out.println("Member ID: " + findMember.getId());
+            System.out.println("Member Name: " + findMember.getName());
 
             entityTransaction.commit();
         } catch (Exception e) {
@@ -73,6 +47,32 @@ public class JpaMain {
             entityManager.close();
             entityManagerFactory.close();
         }
+
+        /**
+         * Select All
+         */
+//        try {
+//
+////            List<Member> memberList = entityManager.createQuery("select m from Member as m", Member.class).getResultList();
+//            List<Member> memberList = entityManager
+//                    .createQuery("select m from Member as m", Member.class)
+//                    .setFirstResult(0)
+//                    .setMaxResults(10)
+//                    .getResultList();
+//            System.out.println("memberList Size: " + memberList.size());
+//
+//            memberList.forEach(member -> {
+//                System.out.println("Member ID: " + member.getId());
+//                System.out.println("Member Name: " + member.getName());
+//            });
+//
+//            entityTransaction.commit();
+//        } catch (Exception e) {
+//            entityTransaction.rollback();
+//        } finally {
+//            entityManager.close();
+//            entityManagerFactory.close();
+//        }
 
         /**
          * Update
