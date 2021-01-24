@@ -18,35 +18,36 @@ public class JpaMain {
         /**
          * Insert
          */
-    //        try {
-    //            Member member = new Member();
-    //            member.setId(1L);
-    //            member.setName("윤성호");
-    //            entityManager.persist(member);
-    //
-    //            entityTransaction.commit();
-    //        } catch (Exception e) {
-    //            entityTransaction.rollback();
-    //        } finally {
-    //            entityManager.close();
-    //            entityManagerFactory.close();
-    //        }
+//            try {
+//                Member member = new Member();
+////                member.setId(1L);
+//                member.setName("윤성호2");
+//                member.setRoleType(RoleType.ADMIN);
+//                entityManager.persist(member);
+//
+//                entityTransaction.commit();
+//            } catch (Exception e) {
+//                entityTransaction.rollback();
+//            } finally {
+//                entityManager.close();
+//                entityManagerFactory.close();
+//            }
 
         /**
          * Select
          */
-        try {
-            Member findMember = entityManager.find(Member.class, 1L);
-            System.out.println("Member ID: " + findMember.getId());
-            System.out.println("Member Name: " + findMember.getName());
-
-            entityTransaction.commit();
-        } catch (Exception e) {
-            entityTransaction.rollback();
-        } finally {
-            entityManager.close();
-            entityManagerFactory.close();
-        }
+//        try {
+//            Member findMember = entityManager.find(Member.class, 1L);
+//            System.out.println("Member ID: " + findMember.getId());
+//            System.out.println("Member Name: " + findMember.getName());
+//
+//            entityTransaction.commit();
+//        } catch (Exception e) {
+//            entityTransaction.rollback();
+//        } finally {
+//            entityManager.close();
+//            entityManagerFactory.close();
+//        }
 
         /**
          * Select All

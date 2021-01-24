@@ -1,4 +1,4 @@
-package hellojpa;
+package hellojpa.type;
 
 public enum RoleType {
     USER,
