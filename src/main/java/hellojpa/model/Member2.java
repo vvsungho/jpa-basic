@@ -12,15 +12,25 @@ public class Member2 {
     private String name;
 
     /**
+     * 선언(OneToMany or ManyToOne)하는쪽이 주인. (join column을 사용하는 객체0
      * 단반향 매핑만으로도 이미 연관관꼐 매핑은 완료
      * 양방향 매핑은 반대 방향으로 조회 기능이 추가 된 것 뿐
      * JPQL에서 역방으로 탐색할 일이 많음.
      * 단방향 매핑을 잘하고 양방향은 필요할 때 추가 (mappend by)
      * many인 테이블에 (many to one)으로 다 거는 것이 좋고(?, 관리하기 편함, many가 주인으로, 외래키를 가지는 테이블을 주인으로!) 양방향이 필요하면 mappedBy 추가.
+     * '다'인 테이블이 연관관계 주인일 때
      */
     @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
+
+    /**
+     * one인 테이블이 주인일 경우.
+     * insertable = false, updatable = false을 추가해서 조회용으로 만들어 놓는다.
+     */
+//    @ManyToOne
+//    @JoinColumn(name = "team_id", insertable = false, updatable = false)
+//    private Team team;
 
     public Long getId() {
         return id;
