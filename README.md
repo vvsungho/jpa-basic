@@ -1,1 +1,1 @@
-# jpa-basic
+# JPA 프로그래밍
